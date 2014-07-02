@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
 import os
 import sys
 import glob
@@ -48,7 +51,6 @@ def get_face(image_path, index):
 		cropped = cv2.getRectSubPix(img_gray, (dx, dy), (x + dx / 2, y + dy / 2))
 		grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
 		resized = cv2.resize(img_color, (92, 112))
-		
 		cv2.imwrite(output_image, resized)
 		print 'CROPPED %s: %s' % (index,output_image)
 
